@@ -1,0 +1,38 @@
+{
+  "name": "hellokitty",
+  "version": "1.0.0",
+  "description": "My sublime Nuxt.js project",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^15.0.0",
+    "@ckeditor/ckeditor5-vue": "^1.0.0",
+    "@nuxtjs/auth": "^4.8.1",
+    "@nuxtjs/axios": "^5.5.4",
+    "@nuxtjs/pwa": "^2.6.0",
+    "@tui-nuxt/editor": "^1.0.0-beta.3",
+    "auth": "^0.0.9",
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.24",
+    "cookie-parser": "^1.4.4",
+    "cookieparser": "^0.1.0",
+    "js-cookie": "^2.2.0",
+    "nuxt": "^2.0.0",
+    "nuxt-i18n": "^5.12.7",
+    "scrollbooster": "^1.1.0",
+    "tiptap": "^1.26.4",
+    "vue": "^2.6.10",
+    "vue-cli": "^2.9.6"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.18.9",
+    "sass-loader": "^7.1.0"
+  }
+}
