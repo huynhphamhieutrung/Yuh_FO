@@ -3,31 +3,24 @@ import {PagingModel} from '../../models/paging.model';
 
 export default {
 
-  async create({}, project) {
-    const formData = new FormData();
-        formData.append('name', project.name);
-        formData.append('short_desc', project.short_desc);
-        formData.append('client', project.client);
-        formData.append('desc', project.desc);
-        formData.append('thumb_small', project.thumb_small);
-        formData.append('thumb_large', project.thumb_large);
-        formData.append('project_type', project.project_type);  
+  async create({}, user) {
+        return await this.$axios.post('/user/register', {
+            "username": user.username,
+            "password": user.password,
+            "name": user.name,
+            "age": user.age,
+            "gender": user.gender,
+            "email":  user.email,
+            "position": user.position,
+            "role": user.role,
+            "phone": user.phone,
+            "address": user.address
+        });
 
-        return await this.$axios.post('/api/admin/createproject', formData );
   },
 
-  async edit({}, project) {
-    const formData = new FormData();
-        formData.append('id', project.id);
-        formData.append('name', project.name);
-        formData.append('short_desc', project.short_desc);
-        formData.append('client', project.client);
-        formData.append('thumb_small', project.thumb_small);
-        formData.append('thumb_large', project.thumb_large);
-        formData.append('desc', project.desc);
-        formData.append('project_type', project.project_type);  
-
-        return await this.$axios.post('/api/admin/editproject', formData );
+  async edit({}, user) {
+        return await this.$axios.post('/api/admin/editproject', formData);
   },
 
   async delete({}, project) {

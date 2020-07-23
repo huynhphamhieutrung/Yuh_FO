@@ -2,7 +2,7 @@
 <div id="right-content">
     <div class="wrapper"> 
         <b-row>
-            <div offset-md="4">ADD PROJECT</div>
+            <div offset-md="4">ADD MISSION</div>
         </b-row>
     </div>
 	<!-- this is list -->
@@ -15,105 +15,119 @@
                 <b-col sm="9">
                     <b-form-input
                         id="input-1"
-                        v-model="indemoPost.name"
-                        :state="nameState"
+                        v-model="user.name"
                         required
                         placeholder="Enter name"
                         aria-describedby="input-name-feedback"
                     ></b-form-input>
-                    <b-form-invalid-feedback id="input-name-feedback" v-if="this.feedback">
-                        Please input name. Min 1 letters and max 100 letters
-                    </b-form-invalid-feedback>
                 </b-col>
             </b-row>
 
             <b-row class="my-1">
                 <b-col sm="3">
-                    <label label-for="input-2">Short Description:</label>
+                    <label label-for="input-2">Username:</label>
                 </b-col>
                 <b-col sm="9">
                     <b-form-input id="input-2" 
-                        required v-model="indemoPost.short_desc" 
-                        placeholder="Enter shortDescription"
-                        :state="shortDesState"
+                        required v-model="user.username" 
+                        placeholder="Enter Username"
                         aria-describedby="input-shortDes-feedback"
                     ></b-form-input>
-                    <b-form-invalid-feedback id="input-shortDes-feedback" v-if="this.feedback"> 
-                        Please input short description. Min 1 letters and max 120 letters
-                    </b-form-invalid-feedback>
                 </b-col>
             </b-row>
 
             <b-row class="my-1">
                 <b-col sm="3">
-                    <label label-for="input-2">Client:</label>
+                    <label label-for="input-2">Password:</label>
                 </b-col>
                 <b-col sm="9">
-                    <b-form-input id="input-2" required v-model="indemoPost.client" placeholder="Enter client" :state="clientState" aria-describedby="input-client-feedback"></b-form-input>
-                    <b-form-invalid-feedback id="input-client-feedback" v-if="this.feedback">
-                        Please input client. Min 1 letters and max 100 letters
-                    </b-form-invalid-feedback>
+                    <b-form-input id="input-2" required v-model="user.password" placeholder="Enter Password" aria-describedby="input-client-feedback"></b-form-input>
                 </b-col>
             </b-row>
 
             <b-row class="my-1">
                 <b-col sm="3">
-                    <label>Thumbnail small:</label>
+                    <label label-for="input-2">Age:</label>
                 </b-col>
                 <b-col sm="9">
-                    <b-form-file 
-                        accept = ".jpg, .png, .gif"
-                        v-model="indemoPost.thumb_small"
-                        :state="Boolean(file)"  
-                        placeholder="Choose a file..."
-                        drop-placeholder="Drop file here..."
-                    ></b-form-file>
-                    <div class="feedback" v-if="!indemoPost.thumb_small">
-                        Please input file (.jpg, .png, .gif)
-                    </div>
+                    <b-form-input id="input-2" required v-model="user.age" placeholder="Enter Age" aria-describedby="input-client-feedback"></b-form-input>
                 </b-col>
             </b-row>
 
             <b-row class="my-1">
                 <b-col sm="3">
-                    <label>Thumbnail large:</label>
-                </b-col>
-                <b-col sm="9">
-                    <b-form-file 
-                        accept = ".jpg, .png, .gif"
-                        v-model="indemoPost.thumb_large"
-                        :state="Boolean(file)"
-                        placeholder="Choose a file image..."
-                        drop-placeholder="Drop file image here..."
-                    ></b-form-file>
-                    <div class="feedback" v-if="!indemoPost.thumb_large">
-                        Please input file (.jpg, .png, .gif)
-                    </div>
-                </b-col>
-            </b-row>
-            
-            <b-row class="my-1">
-                <b-col sm="3">
-                    <label>Description:</label>
-                </b-col>
-                <b-col sm="9">
-                    <TuiEditor class="Desc" v-model="indemoPost.desc"/>
-                </b-col>
-            </b-row>
-            
-            <b-row class="my-1">
-                <b-col sm="3">
-                    <b-form-group label="Using options style:"></b-form-group>
+                    <b-form-group label="Using options gender:"></b-form-group>
                 </b-col>
                 <b-col sm="9">
                     <b-form-checkbox-group
                         id="checkbox-group-1"
-                        v-model="indemoPost.project_type"
+                        v-model="user.gender"
                         :options="options"
                         name="flavour-1"
                     ></b-form-checkbox-group>
-                    <b-form-invalid-feedback :state="state">Please select one</b-form-invalid-feedback>
-                    <b-form-valid-feedback :state="state">Thank you</b-form-valid-feedback>
+                </b-col>
+            </b-row>
+
+             <b-row class="my-1">
+                <b-col sm="3">
+                    <label label-for="input-2">Email:</label>
+                </b-col>
+                <b-col sm="9">
+                    <b-form-input id="input-2" required v-model="user.email" placeholder="Enter Email" aria-describedby="input-client-feedback"></b-form-input>
+                </b-col>
+            </b-row>
+
+             <b-row class="my-1">
+                <b-col sm="3">
+                    <label label-for="input-2">Position:</label>
+                </b-col>
+                <b-col sm="9">
+                    <b-form-input id="input-2" required v-model="user.position" placeholder="Enter Position" aria-describedby="input-client-feedback"></b-form-input>
+                </b-col>
+            </b-row>
+
+             <b-row class="my-1">
+                <b-col sm="3">
+                    <label label-for="input-2">Role:</label>
+                </b-col>
+                <b-col sm="9">
+                    <b-form-input id="input-2" required v-model="user.role" placeholder="Enter Role" aria-describedby="input-client-feedback"></b-form-input>
+                </b-col>
+            </b-row>
+
+            <b-row class="my-1">
+                <b-col sm="3">
+                    <label>Avatar:</label>
+                </b-col>
+                <b-col sm="9">
+                    <b-form-file 
+                        accept = ".jpg, .png, .gif"
+                        v-model="user.avatar"
+                        :state="Boolean(file)"  
+                        placeholder="Choose a file..."
+                        drop-placeholder="Drop file here..."
+                    ></b-form-file>
+                    <div class="feedback" v-if="!user.avatar">
+                        Please input file (.jpg, .png, .gif)
+                    </div>
+                </b-col>
+            </b-row>
+
+            <b-row class="my-1">
+                <b-col sm="3">
+                    <label label-for="input-2">Phone:</label>
+                </b-col>
+                <b-col sm="9">
+                    <b-form-input id="input-2" required v-model="user.phone" placeholder="Enter Phone" aria-describedby="input-client-feedback"></b-form-input>
+                </b-col>
+            </b-row>
+
+            <b-row class="my-1">
+                <b-col sm="3">
+                    <label label-for="input-2">Address:</label>
+                </b-col>
+                <b-col sm="9">
+                    <b-form-input id="input-2" required v-model="user.address" placeholder="Enter Address" aria-describedby="input-client-feedback"></b-form-input>
                 </b-col>
             </b-row>
         </b-container>
@@ -133,44 +147,28 @@ export default {
             file: null,
             feedback: true,
             options: [
-            { text: 'Web', value: 'w' },
-            { text: 'Mobile', value: 'm' },
+            { text: 'Male', value: 'Male' },
+            { text: 'Female', value: 'Female' },
             //   { text: 'Table', value: 't' },
             ],
-            indemoPost: {
+            user: {
                 name: '',
-                short_desc: '',
-                client: '',
-                desc: '',
-                thumb_small:null,
-                thumb_large:null,
-                project_type: [], 
+                username: '',
+                password: '',
+                email: '',
+                gender: 'Male',
+                age: '',
+                position: '',
+                role: '',
+                phone: '',
+                address: '',
             },
         }
     },
 
     computed: {
-      state() {
-        return this.indemoPost.project_type.length === 1
-      },
-      nameState() {
-        var test = this.indemoPost.name.trim();
-        return test.length > 0 && test.length < 100 ? true : false
-      },
       Boolean(file) {
         return acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png'] ? true : false
-      },
-      shortDesState() {
-        var test = this.indemoPost.short_desc.trim();
-        return test.length > 0 && test.length < 120 ? true : false
-      },
-      clientState() {
-        var test = this.indemoPost.client.trim();
-        return test.length > 0 && test.length < 100 ? true : false
-      },
-      descState() {
-        var test = this.indemoPost.desc.trim();
-        return test.length > 0 ? true : false
       },
     },
     
@@ -180,7 +178,7 @@ export default {
         },
 
         saveProject() {
-            this.$store.dispatch('projects/create', this.indemoPost)
+            this.$store.dispatch('user/create', this.user)
             .then(response => {
                 this.$bvToast.toast(`Success `, {
                     title: 'Add project success',
@@ -188,7 +186,7 @@ export default {
                     variant: "primary",
                     toaster: "b-toaster-bottom-right",
                 }, 5000)
-                this.$router.push('/edit/'+ response.data.project.id);
+                this.$router.push('/user');
             })
             .catch((e) => {
                 this.feedback = true

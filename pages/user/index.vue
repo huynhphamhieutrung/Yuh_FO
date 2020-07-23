@@ -117,7 +117,7 @@ export default {
 	
     methods: {
 		goAdd() {
-			this.$router.push('./add');
+			this.$router.push('./user/add');
 		},
 
 		changeTab(tab) {
@@ -132,7 +132,7 @@ export default {
 			this.$store.dispatch('user/fetch').then(paging => {
 					paging.data.data.map((project) => {
 						this.projects.push(project);
-						console.log(project);
+						// console.log(project);
 					})
 			});
 		},

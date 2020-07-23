@@ -85,7 +85,7 @@ export default {
   [
     '@nuxtjs/axios',
     {
-      baseURL: 'https://api-mxh.herokuapp.com',    
+      baseURL: 'http://35.247.149.150',    
       requestInterceptor: (config, {store}) => {
         config.headers.common['token'] = store.state.user.headers.token
         return config

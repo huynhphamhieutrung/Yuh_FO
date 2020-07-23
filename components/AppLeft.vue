@@ -269,8 +269,6 @@
                 var left = document.getElementById("left-content");
                 var right = document.getElementById("right-content");
                 var nav = document.getElementById("nav");
-                  console.log(nav.style)
-                console.log(right)
                 if(this.open) {
                     left.style.width = "5%";
                     nav.style.width = "95%";
